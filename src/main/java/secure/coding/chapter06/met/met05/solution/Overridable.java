@@ -1,0 +1,48 @@
+package secure.coding.chapter06.met.met05.solution;
+
+/**
+ * @rule MET05-J. Ensure that constructors do not call overridable methods
+ * 
+ * @description Invocation of an overridable method during object construction
+ *              may result in the use of uninitialized data, leading to runtime
+ *              exceptions or to unanticipated outcomes. Calling overridable
+ *              methods from constructors can also leak the this reference
+ *              before object construction is complete, potentially exposing
+ *              uninitialized or inconsistent data to other threads.
+ * 
+ * @category Compliant solution
+ */
+class SuperClass {
+
+	public SuperClass() {
+		doLogic();
+	}
+
+	public final void doLogic() {
+		System.out.println("This is superclass!");
+	}
+}
+
+class SubClass extends SuperClass {
+	private String color = null;
+
+	public SubClass() {
+		super();
+		color = "Red";
+	}
+
+	// You cannot override now
+//	public void doLogic() {
+//		System.out.println("This is subclass! The color is :" + color);
+//		// . ..
+//	}
+}
+
+public class Overridable {
+	public static void main(String[] args) {
+		SuperClass bc = new SuperClass();
+		// Prints "This is superclass!"
+		SuperClass sc = new SubClass();
+		// Prints "This is subclass! The color is :null"
+	}
+}
