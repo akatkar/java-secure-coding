@@ -1,7 +1,7 @@
 package secure.coding.chapter04.num.num07;
 
 /**
- * @rule: NUM07-J. D o not attempt comparisons with NaN
+ * @rule: NUM07-J. Do not attempt comparisons with NaN
  *
  * 
  * @description: NaN (not-a-number) is unordered, so the numerical comparison
@@ -19,7 +19,7 @@ public class NaNComparison {
 	 *               with NaN. In accordance with the semantics of NaN, all
 	 *               comparisons with NaN yield false (with the exception of the !=
 	 *               operator, which returns true). Consequently, this comparison
-	 *               always returns false, and the “result is NaN” message is never
+	 *               always returns false, and the ï¿½result is NaNï¿½ message is never
 	 *               printed.
 	 */
 	static void _compareNaN() {

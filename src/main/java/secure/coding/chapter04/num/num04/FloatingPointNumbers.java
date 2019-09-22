@@ -1,7 +1,7 @@
 package secure.coding.chapter04.num.num04;
 
 /**
- * @rule: NUM04-J. D o not use floating-point numbers if precise computation is
+ * @rule: NUM04-J. Do not use floating-point numbers if precise computation is
  *        required
  *
  * @description: The Java language provides two primitive floating-point types,
@@ -21,25 +21,25 @@ public class FloatingPointNumbers {
 	 * @category Non-compliant code
 	 * 
 	 * @description: This non-compliant code example performs some basic currency
-	 *               calculations. A dollar less 7 dimes is $0.29999999999999993
+	 *               calculations. 1 dollar minus 7 dimes is $0.29999999999999993
 	 */
 	static void _calculatePrice() {
 		double dollar = 1.00;
 		double dime = 0.10;
 		int number = 7;
-		System.out.println("A dollar less " + number + " dimes is $" + (dollar - number * dime));
+		System.out.println("1 dollar minus " + number + " dimes is $" + (dollar - number * dime));
 	}
 
 	/**
 	 * @category Compliant solution
 	 * 
-	 * @description: This code correctly outputs: A dollar less 7 dimes is 30 cents
+	 * @description: This code correctly outputs: 1 dollar minus 7 dimes is 30 cents
 	 */
 	static void calculatePrice() {
 		long dollar = 100;
 		long dime = 10;
 		int number = 7;
-		System.out.println("A dollar less " + number + " dimes is " + (dollar - number * dime) + " cents");
+		System.out.println("1 dollar minus " + number + " dimes is " + (dollar - number * dime) + " cents");
 	}
 	
 	public static void main(String[] args) {

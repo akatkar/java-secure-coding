@@ -4,21 +4,22 @@ package secure.coding.chapter04.num.num08;
  * @rule: NUM08-J. Check floating-point inputs for exceptional values
  *
  * @description: Floating-point numbers can take on three exceptional values:
- *               infinity, -infinity, and NaN (not-a-number). These values are
- *               produced as a result of exceptional or otherwise unresolvable
- *               floating-point operations, such as division by zero. These
- *               exceptional values can also be obtained directly from user
- *               input through methods such as Double. valueOf(String s).
- *               Failure to detect and handle such exceptional values can result
- *               in inconsistent behavior. The method Double.valueOf(String s)
- *               can return NaN or an infinite double, as specified by its
- *               contract. Programs must ensure that all floating-point inputs
- *               (especially those obtained from the user) are free of
- *               unexpected exceptional values. The methods Double. isNaN(double
- *               d) and Double.isInfinite(double d) can be used for this
- *               purpose. NaN values are particularly problematic because they
- *               are unordered. That is, the expression NaN == NaN always
- *               returns false. See rule NUM07-J for more information.
+ *               infinity, -infinity, and NaN (not-a-number).
+ * 
+ *               These values are produced as a result of exceptional or
+ *               otherwise unresolvable floating-point operations, such as
+ *               division by zero. These exceptional values can also be obtained
+ *               directly from user input through methods such as Double.
+ *               valueOf(String s). Failure to detect and handle such
+ *               exceptional values can result in inconsistent behavior. The
+ *               method Double.valueOf(String s) can return NaN or an infinite
+ *               double, as specified by its contract. Programs must ensure that
+ *               all floating-point inputs (especially those obtained from the
+ *               user) are free of unexpected exceptional values. The methods
+ *               Double. isNaN(double d) and Double.isInfinite(double d) can be
+ *               used for this purpose. NaN values are particularly problematic
+ *               because they are unordered. That is, the expression NaN == NaN
+ *               always returns false. See rule NUM07-J for more information.
  * 
  */
 public class CheckFloatingPoint {
@@ -44,6 +45,7 @@ public class CheckFloatingPoint {
 			throw new IllegalStateException("overflow error");
 		}
 		currentBalance += val;
+		System.out.println("Non-compliant code : "+ currentBalance);
 	}
 
 	/**
@@ -70,11 +72,13 @@ public class CheckFloatingPoint {
 			throw new IllegalStateException("Overflow error");
 		}
 		currentBalance += val;
+		System.out.println("Compliant solution : "+ currentBalance);
 	}
-	
+
 	public static void main(String[] args) {
 		CheckFloatingPoint object = new CheckFloatingPoint();
+		System.out.println("initial value      : " + object.currentBalance);
 		object._doDeposit("1.0000000000000000000001");
-		object.doDeposit("1.0000000000000000000001");		
+		object.doDeposit ("1.0000000000000000000001");
 	}
 }

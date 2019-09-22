@@ -25,6 +25,7 @@ public class DivisionZeroCheck {
 	static void _divide() {
 		long num1 = 5, num2 = 0, result;
 		result = num1 / num2;
+		System.out.println(result);
 	}
 
 	/**
@@ -40,5 +41,16 @@ public class DivisionZeroCheck {
 			throw new IllegalStateException("num2 must not be zero");
 		}
 		result = num1 / num2;
+		System.out.println(result);
+	}
+	
+	public static void main(String[] args) {
+		try {
+			_divide();
+		}catch(Exception e) {
+			System.err.println("Non compliant code: " + e.getMessage());
+		}
+		
+		divide();
 	}
 }

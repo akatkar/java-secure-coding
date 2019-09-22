@@ -16,7 +16,7 @@ public class MyFormatter {
 		
 		// args[0] should contain the credit card expiration date
 		// but can contain either %1tm, %1$te or %1$ty as malicious arguments		
-		System.out.format(args[0] + "did not match. It was issued on %1$terd of some month%n", c);
+		System.out.format(args[0] + " did not match. It was issued on %1$terd of some month%n", c);
 		
 		
 		System.out.format("%s did not match. It was issued on %2$terd of some month%n", args[0], c);

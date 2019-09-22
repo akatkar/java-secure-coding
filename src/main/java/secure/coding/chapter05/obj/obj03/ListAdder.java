@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 /** 
- * @rule OBJ03-J. D o not mix generic with nongeneric raw types in new code
+ * @rule OBJ03-J. Do not mix generic with nongeneric raw types in new code
  * 
  * @category Non-compliant code
  */

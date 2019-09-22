@@ -7,6 +7,7 @@ public class DirListNoneCompliant {
 	public static void main(String[] args) throws Exception {
 		System.setProperty("dir", "dummy & echo bad");
 		String dir = System.getProperty("dir");
+		System.out.println(dir);
 		Runtime rt = Runtime.getRuntime();
 		Process proc = rt.exec("cmd.exe /C dir " + dir);
 		int result = proc.waitFor();

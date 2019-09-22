@@ -1,6 +1,5 @@
 package secure.coding.chapter05.obj.obj07;
 
-import java.net.HttpCookie;
 
 /**
  * @rule OBJ07-J. Sensitive classes must not let themselves be copied

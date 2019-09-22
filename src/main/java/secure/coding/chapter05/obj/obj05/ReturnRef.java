@@ -8,7 +8,7 @@ import java.util.Hashtable;
  *
  * 
  * @description Returning references to internal mutable members of a class can
- *              compromise an application’s security both by breaking
+ *              compromise an applications security both by breaking
  *              encapsulation and by providing the opportunity to corrupt the
  *              internal state of the class (whether accidentally or
  *              maliciously). As a result, programs must not return references
@@ -21,7 +21,7 @@ import java.util.Hashtable;
  */
 public final class ReturnRef {
 	// Internal state, may contain sensitive data
-	private Hashtable<Integer, String> ht = new Hashtable<Integer, String>();
+	private Hashtable<Integer, String> ht = new Hashtable<>();
 
 	private ReturnRef() {
 		ht.put(1, "123-45-6666");

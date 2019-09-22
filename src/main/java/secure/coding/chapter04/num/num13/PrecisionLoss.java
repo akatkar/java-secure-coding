@@ -52,20 +52,19 @@ public strictfp class PrecisionLoss {
 	}
 
 	public static void main(String[] args) {
-		int result = _subFloatFromInt(1234567890, 1234567890);
 		// This prints -46, and not 0 as may be expected
+		int result = _subFloatFromInt(1234567890, 1234567890);
 		System.out.println(result);
 
 		try {
+			// This throws an exception as Insufficient precision
 			result = subFloatFromInt(1234567890, 1234567890);
-			// This prints -46, and not 0 as may be expected
 			System.out.println(result);
 		} catch (Exception e) {
 			System.err.println(e.getMessage());
 		}
-
-		result = subDoubleFromInt(1234567890, 1234567890);
-		// This prints -46, and not 0 as may be expected
+		// This prints 0 as may be expected
+		result = subDoubleFromInt(1234567890, 1234567890);	
 		System.out.println(result);
 	}
 }
