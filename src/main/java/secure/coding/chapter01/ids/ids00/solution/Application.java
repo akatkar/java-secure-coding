@@ -1,16 +1,11 @@
 package secure.coding.chapter01.ids.ids00.solution;
 
-import java.sql.SQLException;
-
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
 public class Application implements CommandLineRunner {
-
-//	@Autowired
-//	MyUserRepository myUserRepository;
 
 	public static void main(String[] args) {
 		SpringApplication.run(Application.class, args);
@@ -29,7 +24,6 @@ public class Application implements CommandLineRunner {
 			login.doPrivilegedAction("sdshdgs", "yeyeyeye".toCharArray());
 		} catch (Exception e) {
 			System.err.println(e.getMessage());
-			;
 		}
 	}
 
