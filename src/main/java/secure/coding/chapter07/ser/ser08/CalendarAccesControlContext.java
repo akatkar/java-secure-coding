@@ -1,10 +1,6 @@
 package secure.coding.chapter07.ser.ser08;
 
-import java.io.IOException;
-import java.io.ObjectInputStream;
 import java.io.Serializable;
-import java.security.PrivilegedExceptionAction;
-import java.security.SecureRandom;
 
 /**
  * @rule SER08-J. Minimize privileges before deserializing from a privileged

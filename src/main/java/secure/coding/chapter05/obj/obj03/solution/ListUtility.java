@@ -10,7 +10,7 @@ import java.util.List;
  * @description Generically typed code can be freely used with raw types when
  *              attempting to preserve compatibility between nongeneric legacy
  *              code and newer generic code. Using raw types with generic code
- *              causes most Java compilers to issue “unchecked” warnings but
+ *              causes most Java compilers to issue ï¿½uncheckedï¿½ warnings but
  *              still compile
  */
 public class ListUtility {

@@ -4,13 +4,11 @@ package secure.coding.chapter06.met.met01;
  * @rule MET01-J. Never use assertions to validate method arguments
  * 
  * @description Never use assertions to validate arguments of public methods.
- *              According to the Java Language Specification, §14.10, “The
- *              assert Statement”. Another problem with using assertions for
- *              argument checking is that erroneous arguments should result in
- *              an appropriate runtime exception (such as
- *              IllegalArgumentException, IndexOutOfBoundsException, or
- *              NullPointerException). An assertion failure will not throw an
- *              appropriate exception.
+ *              Another problem with using assertions for argument checking is
+ *              that erroneous arguments should result in an appropriate runtime
+ *              exception (such as IllegalArgumentException,
+ *              IndexOutOfBoundsException, or NullPointerException). An
+ *              assertion failure will not throw an appropriate exception.
  */
 public class ValidateWithAssertion {
 

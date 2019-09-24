@@ -20,7 +20,11 @@ import java.util.Hashtable;
  *              warns against this.
  * 
  * @category Noncompliant code
- * 
+ *
+ * @description This noncompliant code example follows that advice but can
+ *              nevertheless fail after serialization and deserialization.
+ *              Consequently, it may be impossible to retrieve the value of the
+ *              object after deserialization by using the original key.
  */
 
 // Mutable class Employee
@@ -28,24 +32,22 @@ class MyKey implements Serializable {
 	// Does not override hashCode()
 }
 
-/**
- * @description This noncompliant code example follows that advice but can
- *              nevertheless fail after serialization and deserialization.
- *              Consequently, it may be impossible to retrieve the value of the
- *              object after deserialization by using the original key.
- */
 public final class HashSer {
 	public static void main(String[] args) throws IOException, ClassNotFoundException {
 		Hashtable<MyKey, String> ht = new Hashtable<>();
 		MyKey key = new MyKey();
+		
 		ht.put(key, "Value");
-		System.out.println("Entry: " + ht.get(key));
+		
 		// Retrieve using the key, works
+		System.out.println("Entry: " + ht.get(key));
+		
 		// Serialize the Hashtable object
 		FileOutputStream fos = new FileOutputStream("hashdata.ser");
 		ObjectOutputStream oos = new ObjectOutputStream(fos);
 		oos.writeObject(ht);
 		oos.close();
+		
 		// Deserialize the Hashtable object
 		FileInputStream fis = new FileInputStream("hashdata.ser");
 		ObjectInputStream ois = new ObjectInputStream(fis);

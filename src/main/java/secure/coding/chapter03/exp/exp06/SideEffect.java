@@ -3,7 +3,7 @@ package secure.coding.chapter03.exp.exp06;
 import java.util.ArrayList;
 
 /**
- * @rule EXP06-J. D o not use side-effecting expressions in assertions
+ * @rule EXP06-J. Do not use side-effecting expressions in assertions
  * 
  * @description The assert statement is a convenient mechanism for incorporating
  *              diagnostic tests in code. Expressions used with the standard
@@ -30,6 +30,6 @@ public class SideEffect {
 	 */
 	void process(int index) {
 		assert names.remove(null); // side-effect
-		// …
+		//
 	}
 }

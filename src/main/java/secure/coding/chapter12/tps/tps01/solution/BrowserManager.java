@@ -36,7 +36,7 @@ import java.util.concurrent.atomic.AtomicInteger;
  * @category Compliant Solution (CallerRunsPolicy)
  * 
  * @description This compliant solution selects and schedules tasks for
- *              execution, avoiding threadstarvation deadlock. It sets the
+ *              execution, avoiding thread starvation deadlock. It sets the
  *              CallerRunsPolicy on a ThreadPoolExecutor and uses a
  *              SynchronousQueue [ Gafter 2006 ]. The policy dictates that when
  *              the thread pool runs out of available threads, any subsequent

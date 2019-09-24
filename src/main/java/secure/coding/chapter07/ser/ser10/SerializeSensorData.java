@@ -7,7 +7,7 @@ import java.io.ObjectOutputStream;
 import java.io.Serializable;
 
 /**
- * @rule SER10-J. A void memory and resource leaks during serialization
+ * @rule SER10-J. Avoid memory and resource leaks during serialization
  * 
  * 
  * @description Serialization can extend the lifetime of objects, preventing

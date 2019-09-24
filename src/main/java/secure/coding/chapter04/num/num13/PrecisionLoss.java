@@ -1,7 +1,7 @@
 package secure.coding.chapter04.num.num13;
 
 /**
- * @rule: NUM13-J. A void loss of precision when converting primitive integers
+ * @rule: NUM13-J. Avoid loss of precision when converting primitive integers
  *        to floating-point
  * 
  * 
@@ -21,12 +21,12 @@ public strictfp class PrecisionLoss {
 	 * @category Compliant solution
 	 * 
 	 * @description: This compliant solution range checks the argument of the
-	 *               integer argument (op1) to ensure it can be represented as a
+	 *               integer argument (op2) to ensure it can be represented as a
 	 *               value of type float without a loss of precision.
 	 */
 	public static int subFloatFromInt(int op1, float op2) throws ArithmeticException {
 		// The significant can store at most 23 bits
-		if ((op1 > 0x007FFFFF) || (op1 < -0x800000)) {
+		if ((op2 > 0x007FFFFF) || (op2 < -0x800000)) {
 			throw new ArithmeticException("Insufficient precision");
 		}
 		return op1 - (int) op2;

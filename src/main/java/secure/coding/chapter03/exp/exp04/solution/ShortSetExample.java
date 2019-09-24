@@ -26,7 +26,7 @@ public class ShortSetExample {
 	 *              explicit cast to short that matches the intended boxed type
 	 */
 	public static void main(String[] args) {
-		HashSet<Short> s = new HashSet<Short>();
+		HashSet<Short> s = new HashSet<>();
 		for (short i = 0; i < 100; i++) {
 			s.add(i);
 			s.remove((short)(i - 1)); // tries to remove an Integer

@@ -9,8 +9,8 @@ package secure.coding.chapter06.met.met07;
  *              of the signature of m', and the declaration of m' is both in the
  *              super classes and super interfaces of the declaring class and
  *              also would otherwise be accessible to code in the declaring
- *              class (Java Language Specification, §8.4.8.2, “Hiding (by Class
- *              Methods)” [ JLS 2005 ]).
+ *              class (Java Language Specification, ï¿½8.4.8.2, ï¿½Hiding (by Class
+ *              Methods)ï¿½ [ JLS 2005 ]).
  * 
  * @category Noncompliant code
  */
@@ -47,5 +47,6 @@ public class StatMethod {
 
 	public static void main(String[] args) {
 		choose("user");
+		choose("admin");
 	}
 }

@@ -1,7 +1,5 @@
 package secure.coding.chapter06.met.met10.solution;
 
-import secure.coding.chapter06.met.met10.RockPaperScissorGame.GameEntry;
-
 /**
  * @rule MET10-J. Follow the general contract when implementing the compareTo()
  *       method
@@ -34,11 +32,21 @@ import secure.coding.chapter06.met.met10.RockPaperScissorGame.GameEntry;
  *              (x.compareTo(y) == 0) == x.equals(y). Generally speaking, any
  *              class that implements the Comparable interface and violates this
  *              condition should clearly indicate this fact. The recommended
- *              language is “Note: this class has a natural ordering that is
- *              inconsistent with equals.”
+ *              language is ï¿½Note: this class has a natural ordering that is
+ *              inconsistent with equals.ï¿½
  * 
  * @category Compliant solution
+ * 
+ * @description This program implements the classic game of rock-paper-scissors,
+ *              using the compareTo() operator to determine the winner of a
+ *              game. However, this game violates the required transitivity
+ *              property because rock beats scissors, and scissors beats paper,
+ *              but rock does not beat paper.
+ * 
+ *              This compliant solution implements the same game without using
+ *              the Comparable interface.
  */
+
 public final class RockPaperScissorGame {
 	public enum GameEntry {
 		ROCK, PAPER, SCISSORS
@@ -50,20 +58,35 @@ public final class RockPaperScissorGame {
 		this.value = value;
 	}
 
-	/**
-	 * @description This program implements the classic game of rock-paper-scissors,
-	 *              using the compareTo() operator to determine the winner of a
-	 *              game. However, this game violates the required transitivity
-	 *              property because rock beats scissors, and scissors beats paper,
-	 *              but rock does not beat paper.
-	 * 
-	 *              This compliant solution implements the same game without using
-	 *              the Comparable interface.
-	 */
 	public int beats(RockPaperScissorGame other) {
 		return (value == other.value) ? 0
 				: (value == GameEntry.ROCK && other.value == GameEntry.PAPER) ? -1
 						: (value == GameEntry.PAPER && other.value == GameEntry.SCISSORS) ? -1
 								: (value == GameEntry.SCISSORS && other.value == GameEntry.ROCK) ? -1 : 1;
+	}
+
+	@Override
+	public String toString() {
+		return value.toString();
+	}
+
+	public static void play(RockPaperScissorGame x, RockPaperScissorGame y) {
+		if (x.beats(y) > 0) {
+			System.out.println(x + " beats " + y);
+		} else if (x.beats(y) < 0) {
+			System.out.println(y + " beats " + x);
+		} else {
+			System.out.println("same, no beats");
+		}
+	}
+
+	public static void main(String[] args) {
+		RockPaperScissorGame rock = new RockPaperScissorGame(GameEntry.ROCK);
+		RockPaperScissorGame paper = new RockPaperScissorGame(GameEntry.PAPER);
+		RockPaperScissorGame scissors = new RockPaperScissorGame(GameEntry.SCISSORS);
+
+		play(rock, scissors);
+		play(paper, scissors);
+		play(rock, paper);
 	}
 }

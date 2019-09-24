@@ -18,6 +18,10 @@ package secure.coding.chapter04.num.num01.solution;
  */
 
 public class BitwiseExamples {
+	
+	static boolean isPowerOfTwo(int val) {
+		return (val & (val-1)) == 0;
+	}
 
 	static int leftShift() {
 		int x = 50;

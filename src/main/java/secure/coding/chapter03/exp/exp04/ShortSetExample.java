@@ -29,7 +29,8 @@ public class ShortSetExample {
 	 *              Consequently, the remove() operation accomplishes nothing.
 	 */
 	public static void main(String[] args) {
-		HashSet<Short> s = new HashSet<Short>();
+		
+		HashSet<Short> s = new HashSet<>();
 		for (short i = 0; i < 100; i++) {
 			s.add(i);
 			s.remove(i - 1); // tries to remove an Integer

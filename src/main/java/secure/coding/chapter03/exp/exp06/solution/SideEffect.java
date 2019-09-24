@@ -31,6 +31,6 @@ public class SideEffect {
 	void process(int index) {
 		boolean nullsRemoved = names.remove(null);
 		assert nullsRemoved; // no side-effect
-		// …
+		//
 	}
 }

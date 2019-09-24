@@ -1,5 +1,6 @@
 package secure.coding.chapter06.met.met05.solution;
 
+
 /**
  * @rule MET05-J. Ensure that constructors do not call overridable methods
  * 
@@ -42,7 +43,10 @@ public class Overridable {
 	public static void main(String[] args) {
 		SuperClass bc = new SuperClass();
 		// Prints "This is superclass!"
+		bc.doLogic();
+		
 		SuperClass sc = new SubClass();
 		// Prints "This is subclass! The color is :null"
+		sc.doLogic();
 	}
 }

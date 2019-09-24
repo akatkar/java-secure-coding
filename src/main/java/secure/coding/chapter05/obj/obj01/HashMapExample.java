@@ -11,12 +11,12 @@ public class HashMapExample {
 	/**
 	 * @category Non-compliant code
 	 */
-	public static final HashMap<Integer, String> _HASH_MAP = new HashMap<Integer, String>();
+	public static final HashMap<Integer, String> _HASH_MAP = new HashMap<>();
 
 	/**
 	 * @category Compliant solution
 	 */
-	private static final HashMap<Integer, String> HASH_MAP = new HashMap<Integer, String>();
+	private static final HashMap<Integer, String> HASH_MAP = new HashMap<>();
 
 	public static String getElement(int key) {
 		return HASH_MAP.get(key);

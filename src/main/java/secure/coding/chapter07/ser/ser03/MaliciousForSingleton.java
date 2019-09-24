@@ -2,17 +2,14 @@ package secure.coding.chapter07.ser.ser03;
 
 import java.io.ByteArrayInputStream;
 import java.io.ByteArrayOutputStream;
-import java.io.FileOutputStream;
-import java.io.IOException;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
-import java.io.Serializable;
 
 /**
  * @rule SER03-J. Do not serialize unencrypted, sensitive data
  * 
  * 
- * @description While serialization allows an object’s state to be saved as a
+ * @description While serialization allows an objectï¿½s state to be saved as a
  *              sequence of bytes and then reconstituted at a later time, it
  *              provides no mechanism to protect the serialized data. An
  *              attacker who gains access to the serialized data can use it to

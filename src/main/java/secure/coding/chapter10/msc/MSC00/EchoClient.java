@@ -43,17 +43,17 @@ import java.net.UnknownHostException;
  *              client application follows the server�s code.
  */
 // Exception handling has been omitted for the sake of brevity
-class EchoServer {
-	public static void main(String[] args) throws IOException {
+public class EchoClient {
+	public static void main(String[] args) throws UnknownHostException, IOException {
 		
-		try(ServerSocket serverSocket= new ServerSocket(9999)) {
-			Socket socket = serverSocket.accept();
+		try(Socket socket = new Socket("localhost", 9999)) {
 			PrintWriter out = new PrintWriter(socket.getOutputStream(), true);
 			BufferedReader in = new BufferedReader(new InputStreamReader(socket.getInputStream()));
-			String inputLine;
-			while ((inputLine = in.readLine()) != null) {
-				System.out.println(inputLine);
-				out.println(inputLine);
+			BufferedReader stdIn = new BufferedReader(new InputStreamReader(System.in));
+			String userInput;
+			while ((userInput = stdIn.readLine()) != null) {
+				out.println(userInput);
+				System.out.println(in.readLine());
 			}
 		}
 	}

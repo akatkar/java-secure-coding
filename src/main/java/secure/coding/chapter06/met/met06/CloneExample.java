@@ -6,14 +6,18 @@ import java.net.HttpCookie;
  * @rule MET06-J. Do not invoke overridable methods in clone()
  * 
  * @description Calling overridable methods from the clone() method is insecure.
+ * 
  *              First, a malicious subclass could override the method and affect
- *              the behavior of the clone() method. Second, a trusted subclass
- *              could observe (and potentially modify) the cloned object in a
- *              partially initialized state before its construction has
- *              concluded. In either case, the subclass could leave the clone,
- *              the object being cloned, or both, in an inconsistent state.
- *              Consequently, clone() methods may invoke only methods that are
- *              final or private.
+ *              the behavior of the clone() method.
+ * 
+ *              Second, a trusted subclass could observe (and potentially
+ *              modify) the cloned object in a partially initialized state
+ *              before its construction has concluded.
+ * 
+ *              In either case, the subclass could leave the clone, the object
+ *              being cloned, or both, in an inconsistent state. Consequently,
+ *              clone() methods may invoke only methods that are final or
+ *              private.
  * 
  * @category Noncompliant code
  */
@@ -53,7 +57,7 @@ class SuperClass implements Cloneable {
 }
 
 public class CloneExample extends SuperClass {
-	
+
 	CloneExample(HttpCookie[] c) {
 		super(c);
 	}

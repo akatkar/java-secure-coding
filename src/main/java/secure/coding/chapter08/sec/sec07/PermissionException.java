@@ -7,27 +7,27 @@ import java.security.PermissionCollection;
 import java.security.Permissions;
 
 /**
- * @rule SEC07-J. Call the superclass’s getPermissions() method when writing a
+ * @rule SEC07-J. Call the superclassï¿½s getPermissions() method when writing a
  *       custom class loader
  * 
  * @descriptionWhen a custom class loader must override the getPermissions()
  *                  method, the implementation must consult the default system
- *                  policy by explicitly invoking the superclass’s
+ *                  policy by explicitly invoking the superclassï¿½s
  *                  getPermissions() method before assigning arbitrary
  *                  permissions to the code source. A custom class loader that
- *                  ignores the superclass’s getPermissions() could load
+ *                  ignores the superclassï¿½s getPermissions() could load
  *                  untrusted classes with elevated privileges.
  * 
  * @category Noncompliant code
  *
  * @description This noncompliant code example shows a fragment of a custom
  *              class loader that extends the class URLClassLoader. It overrides
- *              the getPermissions() method but does not call its superclass’s
+ *              the getPermissions() method but does not call its superclassï¿½s
  *              more restrictive getPermissions() method.
  * 
  *              Consequently, a class defined using this custom class loader has
  *              permissions that are completely independent of those specified
- *              in the system wide policy file. In effect, the class’s
+ *              in the system wide policy file. In effect, the classes
  *              permissions override them.
  */
 public class PermissionException extends URLClassLoader {

@@ -7,7 +7,7 @@ import javax.swing.JFrame;
  * 
  * @description The garbage collector invokes object finalizer methods after it
  *              determines that the object is unreachable but before it reclaims
- *              the object’s storage. Execution of the finalizer provides an
+ *              the objects storage. Execution of the finalizer provides an
  *              opportunity to release resources such as open streams, files,
  *              and network connections that might not otherwise be released
  *              automatically through the normal action of the garbage

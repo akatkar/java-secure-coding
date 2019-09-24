@@ -38,7 +38,7 @@ public class DeleteFile {
 		File someFile = new File("someFileName.txt");
 		// do something with someFile
 		if (!someFile.delete()) {
-			// handle failure to delete the f ile
+			// handle failure to delete the file
 		}
 	}
 

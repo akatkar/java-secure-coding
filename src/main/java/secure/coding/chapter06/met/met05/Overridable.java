@@ -41,7 +41,10 @@ public class Overridable {
 	public static void main(String[] args) {
 		SuperClass bc = new SuperClass();
 		// Prints "This is superclass!"
+		bc.doLogic();
+		
 		SuperClass sc = new SubClass();
 		// Prints "This is subclass! The color is :null"
+		sc.doLogic();
 	}
 }

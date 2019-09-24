@@ -19,6 +19,10 @@ import java.util.Map;
  *              to follow this contract is a common source of defects.
  * 
  * @category Compliant solution
+ * 
+ * @description This compliant solution overrides the hashCode() method so that
+ *              it generates the same value for any two instances that are
+ *              considered to be equal by the equals() method.
  */
 public final class CreditCard {
 
@@ -47,11 +51,6 @@ public final class CreditCard {
 		return result;
 	}
 
-	/**
-	 * @description This compliant solution overrides the hashCode() method so that
-	 *              it generates the same value for any two instances that are
-	 *              considered to be equal by the equals() method.
-	 */
 	public static void main(String[] args) {
 		Map<CreditCard, String> m = new HashMap<CreditCard, String>();
 		m.put(new CreditCard(100), "4111111111111111");

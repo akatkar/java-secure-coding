@@ -3,7 +3,7 @@ package secure.coding.chapter10.msc.MSC06;
 import java.util.*;
 
 /**
- * @rule MSC05-J. MSC06-J. Do not modify the underlying collection when an
+ * @rule MSC06-J. Do not modify the underlying collection when an
  *       iteration is in progress
  * 
  */
@@ -12,7 +12,7 @@ class BadIterate {
 	 * @category Noncompliant code
 	 * 
 	 * @description This noncompliant code example (based on Sun Developer Network [
-	 *              SDN 2011 ] bug report 66872774) uses the Collection’s remove()
+	 *              SDN 2011 ] bug report 66872774) uses the Collectionï¿½s remove()
 	 *              method to remove an element from an ArrayList while iterating
 	 *              over the ArrayList. The resulting behavior is unspecified.
 	 */

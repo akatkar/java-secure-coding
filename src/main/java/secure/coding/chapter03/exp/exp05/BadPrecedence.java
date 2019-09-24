@@ -7,8 +7,8 @@ package secure.coding.chapter03.exp.exp05;
  * 
  * @description The Java programming language guarantees that the operands of
  *              operators appear to be evaluated in a specific evaluation order,
- *              namely, from left to right. Section 15.7.3, “Evaluation Respects
- *              Parentheses and Precedence” adds: Java programming language
+ *              namely, from left to right. Section 15.7.3, ï¿½Evaluation Respects
+ *              Parentheses and Precedenceï¿½ adds: Java programming language
  *              implementations must respect the order of evaluation as
  *              indicated explicitly by parentheses and implicitly by operator
  *              precedence.
@@ -32,7 +32,7 @@ public class BadPrecedence {
 		int[] threshold = new int[20];
 		threshold[0] = 10;
 		number = (number > threshold[0] ? 0 : -2) + ((31 * ++number) * (number = get()));
-		// …
+		// 
 		if (number == 0) {
 			System.out.println("Access granted");
 		} else {

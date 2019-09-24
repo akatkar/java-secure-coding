@@ -19,6 +19,20 @@ import java.util.Map;
  *              to follow this contract is a common source of defects.
  * 
  * @category Noncompliant code
+ * 
+ * @description This noncompliant code example associates credit card numbers
+ *              with strings using a HashMap and subsequently attempts to
+ *              retrieve the string value associated with a credit card number.
+ *              The expected retrieved value is 4111111111111111; the actual
+ *              retrieved value is null.
+ * 
+ *              The cause of this erroneous behavior is that the CreditCard
+ *              class overrides the equals() method but fails to override the
+ *              hashCode() method. Consequently, the default hashCode() method
+ *              returns a different value for each object, even though the
+ *              objects are logically equivalent; these differing values lead to
+ *              examination of different hash buckets, which prevents the get()
+ *              method from finding the intended value
  */
 public final class CreditCard {
 
@@ -28,6 +42,7 @@ public final class CreditCard {
 		this.number = (short) number;
 	}
 
+	@Override
 	public boolean equals(Object o) {
 		if (o == this) {
 			return true;
@@ -39,23 +54,9 @@ public final class CreditCard {
 		return cc.number == number;
 	}
 
-	/**
-	 * @description This noncompliant code example associates credit card numbers
-	 *              with strings using a HashMap and subsequently attempts to
-	 *              retrieve the string value associated with a credit card number.
-	 *              The expected retrieved value is 4111111111111111; the actual
-	 *              retrieved value is null.
-	 * 
-	 *              The cause of this erroneous behavior is that the CreditCard
-	 *              class overrides the equals() method but fails to override the
-	 *              hashCode() method. Consequently, the default hashCode() method
-	 *              returns a different value for each object, even though the
-	 *              objects are logically equivalent; these differing values lead to
-	 *              examination of different hash buckets, which prevents the get()
-	 *              method from finding the intended value
-	 */
 	public static void main(String[] args) {
 		Map<CreditCard, String> m = new HashMap<CreditCard, String>();
+		
 		m.put(new CreditCard(100), "4111111111111111");
 		System.out.println(m.get(new CreditCard(100)));
 	}
